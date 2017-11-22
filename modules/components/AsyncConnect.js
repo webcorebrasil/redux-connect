@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
-import RouterContext from 'react-router/lib/RouterContext';
+import { withRouter } from 'react-router';
 import { loadAsyncConnect } from '../helpers/utils';
 import { getMutableState } from '../helpers/state';
 
@@ -27,7 +27,7 @@ export class AsyncConnect extends Component {
       return true;
     },
     render(props) {
-      return <RouterContext {...props} />;
+      return withRouter(props);
     },
   };
 
